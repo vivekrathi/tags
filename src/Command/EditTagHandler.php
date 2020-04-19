@@ -81,6 +81,21 @@ class EditTagHandler
         if (isset($attributes['isRestricted'])) {
             $tag->is_restricted = (bool) $attributes['isRestricted'];
         }
+        if (isset($attributes['showInTagLabels'])) {
+            $tag->showInTagLabels = (bool) $attributes['showInTagLabels'];
+        }
+        if (isset($attributes['imagePath'])) {
+            $tag->imagePath = $attributes['imagePath'];
+        }
+        if (isset($attributes['showonHomePage'])) {
+            $tag->showonHomePage = (bool) $attributes['showonHomePage'];
+        }
+        if (isset($attributes['displayOrder'])) {
+            $tag->displayOrder = (int) $attributes['displayOrder'];
+        }
+        if (isset($attributes['bannerImagePath'])) {
+            $tag->bannerImagePath = $attributes['bannerImagePath'];
+        }
 
         event(new TagWillBeSaved($tag, $actor, $data));
 

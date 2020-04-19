@@ -39,7 +39,13 @@ class TagSerializer extends AbstractSerializer
             'isHidden'           => (bool) $tag->is_hidden,
             'lastPostedAt'       => $this->formatDate($tag->last_posted_at),
             'canStartDiscussion' => $this->actor->can('startDiscussion', $tag),
-            'canAddToDiscussion' => $this->actor->can('addToDiscussion', $tag)
+            'canAddToDiscussion' => $this->actor->can('addToDiscussion', $tag),
+            'imagePath'          => $tag->imagePath,
+            'bannerImagePath'    => $tag->bannerImagePath,
+            'showInTagLabels'    => (bool) $tag->showInTagLabels,
+            'parentID'           => $tag->parent_id,
+            'showonHomePage'     => (bool) $tag->showonHomePage,
+            'displayOrder'       => (int) $tag->displayOrder,
         ];
 
         if ($this->actor->isAdmin()) {

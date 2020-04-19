@@ -50,7 +50,10 @@ class TagRepository
     public function all(User $user = null)
     {
         $query = Tag::query();
-
+        if (isset($params)) {
+            if (array_key_exists("showonHomePage", $params))
+                $query = $query->where('showonHomePage', '=', $params['showonHomePage']);
+        }
         return $this->scopeVisibleTo($query, $user)->get();
     }
 
