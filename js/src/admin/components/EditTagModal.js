@@ -255,6 +255,11 @@ export default class EditTagModal extends Modal {
       color: this.color(),
       icon: this.icon(),
       isHidden: this.isHidden(),
+      imagePath: this.imagePath(),
+      showInTagLabels: this.showInTagLabels(),
+      displayOrder: this.displayOrder(),
+      showonHomePage: this.showonHomePage(),
+      bannerImagePath: this.bannerImagePath(),
     };
   }
 

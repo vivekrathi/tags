@@ -11,6 +11,7 @@ export default function tagsLabel(tags, attrs = {}) {
   if (tags) {
     sortTags(tags).forEach(tag => {
       if (tag || tags.length === 1) {
+        if(tag.showInTagLabels())
         children.push(tagLabel(tag, {link}));
       }
     });
